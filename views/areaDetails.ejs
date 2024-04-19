@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head content here -->
+</head>
+<body>
+<h1>Area Details</h1>
+<h2>Area ID: <span id="areaId"><%= area._id %></span></h2>
+<p>Area Size: <span id="areaSize"></span></p>
+<img src="<%= area.imageUrl %>" alt="Satellite Image" style="max-width: 600px;">
+<a href="/map">Back to Map</a>
+<script src="/js/areaDetails.js"></script>
+</body>
+</html>

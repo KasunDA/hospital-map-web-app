@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head content here -->
+</head>
+<body>
+<h1>Welcome to the Map App</h1>
+<div id="areasList">
+    <% areas.forEach(area => { %>
+        <div class="area">
+            <h2>Area ID: <%= area._id %></h2>
+            <p>Area Size: <%= areaSize(area.coordinates) %> square km</p>
+            <img src="<%= area.imageUrl %>" alt="Satellite Image" style="max-width: 200px;">
+            <a href="/map/areas/<%= area._id %>">View Details</a>
+        </div>
+    <% }) %>
+</div>
+</body>
+</html>

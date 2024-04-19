@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map</title>
-    <!-- Include Leaflet.js and CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Head content here -->
 </head>
 <body>
 <h1>Map Page</h1>
 <div id="map" style="height: 400px;"></div>
+<form id="addAreaForm" action="/map/areas" method="POST">
+    <input type="hidden" id="coordinates" name="coordinates">
+    <input type="hidden" id="imageUrl" name="imageUrl">
+    <button type="submit">Add Area</button>
+</form>
 <script src="/js/map.js"></script>
 </body>
 </html>
