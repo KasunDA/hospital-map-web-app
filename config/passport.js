@@ -1,15 +1,14 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = require('../models/User');
+const User = require('../models/User'); // Adjust the path as needed
 
-// Configure passport-local strategy
 passport.use(new LocalStrategy((username, password, done) => {
     User.findOne({ username: username }, (err, user) => {
         if (err) { return done(err); }
         if (!user) {
             return done(null, false, { message: 'Incorrect username.' });
         }
-        if (!user.validPassword(password)) {
+        if (!user.validPassword(password)) { // Using validPassword method
             return done(null, false, { message: 'Incorrect password.' });
         }
         return done(null, user);
@@ -25,3 +24,5 @@ passport.deserializeUser((id, done) => {
         done(err, user);
     });
 });
+
+module.exports = passport;
